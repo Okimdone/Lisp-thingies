@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for i in $(find ./DV*); do 
+	if [[ -f $i ]]; then
+		echo "## $i"
+		echo '```lisp'
+		cat $i
+		echo
+		echo '```'
+		printf "\n\n"
+	else 
+		echo "# $i"
+	fi
+done
